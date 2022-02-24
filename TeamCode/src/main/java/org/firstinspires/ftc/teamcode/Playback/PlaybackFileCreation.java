@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode.Playback;
 
+import android.os.Environment;
+
 import com.SCHSRobotics.HAL9001.system.robot.Robot;
 import com.SCHSRobotics.HAL9001.system.robot.SubSystem;
 
@@ -39,7 +41,7 @@ public class PlaybackFileCreation extends SubSystem {
             while (robot.gamepad1.y) {
 
             }
-            BufferedReader reader = new BufferedReader(new FileReader("/Users/aditya/PlaybackFiles/master1.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader(Environment.getExternalStorageDirectory().getPath() + "/System64" + "/master1.txt"));
             int fileNumber = 0;
             int fileNumberCheck = 0;
             String fileCheck;
@@ -55,8 +57,8 @@ public class PlaybackFileCreation extends SubSystem {
                 fileNumber++;
             }
             robot.telemetry.addData("fileCheck: " + fileNumberCheck + ", fileNumber: " + fileNumber, ""); //check the numbers match
-            File autoFile = new File("/Users/aditya/PlaybackFiles/playback" + fileNumber + ".txt");
-            FileWriter masterWriter = new FileWriter("/Users/aditya/PlaybackFiles/master1.txt", true);
+            File autoFile = new File(Environment.getExternalStorageDirectory().getPath() + "/System64/playback" + fileNumber + ".txt");
+            FileWriter masterWriter = new FileWriter(Environment.getExternalStorageDirectory().getPath() + "/System64" + "/master1.txt", true);
 
             //masterWriter.write("test");
             masterWriter.write(new Integer(fileNumber).toString() + "\n");

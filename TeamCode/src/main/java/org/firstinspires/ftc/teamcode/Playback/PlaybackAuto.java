@@ -91,7 +91,7 @@ public class PlaybackAuto extends BaseAutonomous {
             robot.telemetry.update();
 
             //check the outcome and create the reader for the auto file
-            String filePath = "/Users/aditya/PlaybackFiles/playback" + fileNumber + ".txt";
+            String filePath = Environment.getExternalStorageDirectory().getPath() + "/System64/playback" + fileNumber + ".txt";
             System.out.println("file path: " + filePath + " fileNumber: " + fileNumber); //check the numbers match
             BufferedReader autoReader = new BufferedReader(new FileReader(filePath));
 
