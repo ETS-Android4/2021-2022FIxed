@@ -19,5 +19,11 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite-task-vision:0.2.0'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'org.firstinspires.ftc:gameAssets-FreightFrenzy:1.0.0'
+
+    implementation('io.github.schs-robotics:hal9001:1.1.7') {
+        exclude group: 'io.github.schs-robotics', module: 'hal9001-opencv-repackaged'
+
+        exclude group: 'org.ejml', module: 'ejml-all'
+    }
 }
 
